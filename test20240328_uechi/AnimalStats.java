@@ -42,6 +42,12 @@ public class AnimalStats {
                 minWeightAnimal = animal.getName();
             }
         }
+        // 動物のリストを出力
+        System.out.println("動物のリスト:");
+        System.out.printf("%-10s %-10s %-10s%n", "名前", "身長(cm)", "体重(kg)");
+        for (Animal animal : animals) {
+            System.out.printf("%-10s %-10.2f %-10.2f%n", animal.getName(), animal.getHeight(), animal.getWeight());
+        }
 
         // 結果の出力
         System.out.println("動物６頭の体重・身長を計測しました。身長と体重の最大値と最小値を出力しています。");
