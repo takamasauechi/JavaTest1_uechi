@@ -19,19 +19,35 @@ public class AnimalStats {
         double minHeight = Double.MAX_VALUE;
         double maxWeight = Double.MIN_VALUE;
         double minWeight = Double.MAX_VALUE;
+        String maxHeightAnimal = "";
+        String minHeightAnimal = "";
+        String maxWeightAnimal = "";
+        String minWeightAnimal = "";
 
         for (Animal animal : animals) {
-            if (animal.getHeight() > maxHeight) maxHeight = animal.getHeight();
-            if (animal.getHeight() < minHeight) minHeight = animal.getHeight();
-            if (animal.getWeight() > maxWeight) maxWeight = animal.getWeight();
-            if (animal.getWeight() < minWeight) minWeight = animal.getWeight();
+            if (animal.getHeight() > maxHeight) {
+                maxHeight = animal.getHeight();
+                maxHeightAnimal = animal.getName();
+            }
+            if (animal.getHeight() < minHeight) {
+                minHeight = animal.getHeight();
+                minHeightAnimal = animal.getName();
+            }
+            if (animal.getWeight() > maxWeight) {
+                maxWeight = animal.getWeight();
+                maxWeightAnimal = animal.getName();
+            }
+            if (animal.getWeight() < minWeight) {
+                minWeight = animal.getWeight();
+                minWeightAnimal = animal.getName();
+            }
         }
 
         // 結果の出力
         System.out.println("動物６頭の体重・身長を計測しました。身長と体重の最大値と最小値を出力しています。");
-        System.out.println("最大身長: " + maxHeight + " cm");
-        System.out.println("最小身長: " + minHeight + " cm");
-        System.out.println("最大体重: " + maxWeight + " kg");
-        System.out.println("最小体重: " + minWeight + " kg");
+        System.out.println("最大身長: " + maxHeight + " cm (" + maxHeightAnimal + ")");
+        System.out.println("最小身長: " + minHeight + " cm (" + minHeightAnimal + ")");
+        System.out.println("最大体重: " + maxWeight + " kg (" + maxWeightAnimal + ")");
+        System.out.println("最小体重: " + minWeight + " kg (" + minWeightAnimal + ")");
     }
 }
